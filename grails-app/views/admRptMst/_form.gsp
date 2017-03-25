@@ -26,10 +26,10 @@
     </div>
 
     <div class='col-xs-12 col-sm-6 col-md-4 col-lg-3'>
-        <div class='form-group ${hasErrors(bean: admRptMstInstance, field: 'parentAdmPermissible', 'has-error')}'>
-            <label><g:message code="admRptMst.parentAdmPermissible.label" default="Parent Adm Permissible"/></label>
-            <g:select name="parentAdmPermissible" class="form-control many-to-one" from="${org.reflection.adm.AdmPermissible.list()}" value="${admRptMstInstance?.parentAdmPermissible?.id}" optionKey="id" noSelection="['': 'Select One']"/>
-            <g:renderErrors bean='admRptMstInstance' field='parentAdmPermissible'/>
+        <div class='form-group ${hasErrors(bean: admRptMstInstance, field: 'parentAdmRptMst', 'has-error')}'>
+            <label><g:message code="admRptMst.parentAdmRptMst.label" default="Parent Adm Permissible"/></label>
+            <g:select name="parentAdmRptMst" class="form-control many-to-one" from="${org.reflection.adm.AdmRptMst.list()}" value="${admRptMstInstance?.parentAdmRptMst?.id}" optionKey="id" noSelection="['': 'Select One']"/>
+            <g:renderErrors bean='admRptMstInstance' field='parentAdmRptMst'/>
         </div>
     </div>
 

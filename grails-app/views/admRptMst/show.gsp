@@ -171,75 +171,75 @@
                 </fieldset>
 
                 
-                <fieldset class="admPermissible-show">
-                    <legend><g:message code="admPermissible.pageTitle.label" default="Adm Permissible Details"/></legend>
+                <fieldset class="admRptMst-show">
+                    <legend><g:message code="admRptMst.pageTitle.label" default="Adm Permissible Details"/></legend>
 
                     <div class="box box-info">
-                        <g:if test="${admRptMstInstance?.admPermissible}">
-                            <g:each in="${admRptMstInstance?.admPermissible}" var="admPermissibleInstance">
+                        <g:if test="${admRptMstInstance?.admRptMst}">
+                            <g:each in="${admRptMstInstance?.admRptMst}" var="admRptMstInstance">
                                 <div class="box-body">
                                     
-                                    %{--<g:if test="${admPermissibleInstance?.title}">--}%
+                                    %{--<g:if test="${admRptMstInstance?.title}">--}%
                                     <div class="form-group">
                                         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                                             <span class="property-label bold">
-                                                <g:message code="admPermissible.title.label" default="Title"/>
+                                                <g:message code="admRptMst.title.label" default="Title"/>
                                             </span>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                                             <span class="property-value">
-                                                <g:fieldValue bean="${admPermissibleInstance}" field="title"/>&nbsp;
+                                                <g:fieldValue bean="${admRptMstInstance}" field="title"/>&nbsp;
                                             </span>
                                         </div>
                                     </div>
                                     %{--</g:if>--}%
                                     
-                                    %{--<g:if test="${admPermissibleInstance?.itemType}">--}%
+                                    %{--<g:if test="${admRptMstInstance?.itemType}">--}%
                                     <div class="form-group">
                                         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                                             <span class="property-label bold">
-                                                <g:message code="admPermissible.itemType.label" default="Item Type"/>
+                                                <g:message code="admRptMst.itemType.label" default="Item Type"/>
                                             </span>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                                             <span class="property-value">
-                                                <g:fieldValue bean="${admPermissibleInstance}" field="itemType"/>&nbsp;
+                                                <g:fieldValue bean="${admRptMstInstance}" field="itemType"/>&nbsp;
                                             </span>
                                         </div>
                                     </div>
                                     %{--</g:if>--}%
                                     
-                                    %{--<g:if test="${admPermissibleInstance?.code}">--}%
+                                    %{--<g:if test="${admRptMstInstance?.code}">--}%
                                     <div class="form-group">
                                         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                                             <span class="property-label bold">
-                                                <g:message code="admPermissible.code.label" default="Code"/>
+                                                <g:message code="admRptMst.code.label" default="Code"/>
                                             </span>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                                             <span class="property-value">
-                                                <g:fieldValue bean="${admPermissibleInstance}" field="code"/>&nbsp;
+                                                <g:fieldValue bean="${admRptMstInstance}" field="code"/>&nbsp;
                                             </span>
                                         </div>
                                     </div>
                                     %{--</g:if>--}%
                                     
-                                    %{--<g:if test="${admPermissibleInstance?.parentAdmPermissible}">--}%
+                                    %{--<g:if test="${admRptMstInstance?.parentAdmRptMst}">--}%
                                     <div class="form-group">
                                         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                                             <span class="property-label bold">
-                                                <g:message code="admPermissible.parentAdmPermissible.label" default="Parent Adm Permissible"/>
+                                                <g:message code="admRptMst.parentAdmRptMst.label" default="Parent Adm Permissible"/>
                                             </span>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                                             
                                             <span class="property-value">
-                                                <g:link controller="admPermissible" action="show" id="${admPermissibleInstance?.parentAdmPermissible?.id}">
-                                                    ${admPermissibleInstance?.parentAdmPermissible?.encodeAsHTML()}&nbsp;
+                                                <g:link controller="admRptMst" action="show" id="${admRptMstInstance?.parentAdmRptMst?.id}">
+                                                    ${admRptMstInstance?.parentAdmRptMst?.encodeAsHTML()}&nbsp;
                                                 </g:link>
                                             </span>
                                             
@@ -247,67 +247,67 @@
                                     </div>
                                     %{--</g:if>--}%
                                     
-                                    %{--<g:if test="${admPermissibleInstance?.isActive}">--}%
+                                    %{--<g:if test="${admRptMstInstance?.isActive}">--}%
                                     <div class="form-group">
                                         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                                             <span class="property-label bold">
-                                                <g:message code="admPermissible.isActive.label" default="Is Active"/>
+                                                <g:message code="admRptMst.isActive.label" default="Is Active"/>
                                             </span>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                                             <span class="property-value">
-                                                <g:formatBoolean boolean="${admPermissibleInstance?.isActive}"/>&nbsp;
+                                                <g:formatBoolean boolean="${admRptMstInstance?.isActive}"/>&nbsp;
                                             </span>
                                         </div>
                                     </div>
                                     %{--</g:if>--}%
                                     
-                                    %{--<g:if test="${admPermissibleInstance?.slNo}">--}%
+                                    %{--<g:if test="${admRptMstInstance?.slNo}">--}%
                                     <div class="form-group">
                                         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                                             <span class="property-label bold">
-                                                <g:message code="admPermissible.slNo.label" default="Sl No"/>
+                                                <g:message code="admRptMst.slNo.label" default="Sl No"/>
                                             </span>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                                             <span class="property-value">
-                                                <g:fieldValue bean="${admPermissibleInstance}" field="slNo"/>&nbsp;
+                                                <g:fieldValue bean="${admRptMstInstance}" field="slNo"/>&nbsp;
                                             </span>
                                         </div>
                                     </div>
                                     %{--</g:if>--}%
                                     
-                                    %{--<g:if test="${admPermissibleInstance?.remarks}">--}%
+                                    %{--<g:if test="${admRptMstInstance?.remarks}">--}%
                                     <div class="form-group">
                                         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                                             <span class="property-label bold">
-                                                <g:message code="admPermissible.remarks.label" default="Remarks"/>
+                                                <g:message code="admRptMst.remarks.label" default="Remarks"/>
                                             </span>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                                             <span class="property-value">
-                                                <g:fieldValue bean="${admPermissibleInstance}" field="remarks"/>&nbsp;
+                                                <g:fieldValue bean="${admRptMstInstance}" field="remarks"/>&nbsp;
                                             </span>
                                         </div>
                                     </div>
                                     %{--</g:if>--}%
                                     
-                                    %{--<g:if test="${admPermissibleInstance?.admPermissible}">--}%
+                                    %{--<g:if test="${admRptMstInstance?.admRptMst}">--}%
                                     <div class="form-group">
                                         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                                             <span class="property-label bold">
-                                                <g:message code="admPermissible.admPermissible.label" default="Adm Permissible"/>
+                                                <g:message code="admRptMst.admRptMst.label" default="Adm Permissible"/>
                                             </span>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                                             
-                                            <g:each in="${admRptMstInstance.admPermissible}" var="a">
+                                            <g:each in="${admRptMstInstance.admRptMst}" var="a">
                                             <span class="property-value">
-                                                <g:link controller="admPermissible" action="show" id="${a.id}">
+                                                <g:link controller="admRptMst" action="show" id="${a.id}">
                                                     ${a?.encodeAsHTML()}&nbsp;
                                                 </g:link>
                                             </span>
@@ -318,7 +318,7 @@
                                     %{--</g:if>--}%
                                     
                                 </div>
-                                <g:if test="${admRptMstInstance?.admPermissible?.size() > 0}"><hr></g:if>
+                                <g:if test="${admRptMstInstance?.admRptMst?.size() > 0}"><hr></g:if>
                             </g:each>
                         </g:if>
                         <g:else>

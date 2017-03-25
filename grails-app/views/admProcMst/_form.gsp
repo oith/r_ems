@@ -1,25 +1,3 @@
-<!--
-Use These line of code for : message.properties
-
-#------------------------------------------------------------------------------------------------------------------------------------------------------
-#                Adm Proc Mst                                                                                                                    
-#------------------------------------------------------------------------------------------------------------------------------------------------------
-admProcMst.pageTitle.label=Adm Proc Mst
-admProcMst.cmd.label=Cmd
-admProcMst.code.label=Code
-admProcMst.frqncyType.label=Frqncy Type
-admProcMst.isActive.label=Is Active
-admProcMst.itemType.label=Item Type
-admProcMst.parentAdmPermissible.label=Parent Adm Permissible
-admProcMst.procTables.label=Proc Tables
-admProcMst.remarks.label=Remarks
-admProcMst.runModeType.label=Run Mode Type
-admProcMst.runWith.label=Run With
-admProcMst.slNo.label=Sl No
-admProcMst.title.label=Title
-#------------------------------------------------------------------------------------------------------------------------------------------------------
-
--->
 <%@ page import="org.reflection.adm.AdmProcMst" %>
 <fieldset class='form'>
 
@@ -48,17 +26,17 @@ admProcMst.title.label=Title
     </div>
 
     <div class='col-xs-12 col-sm-6 col-md-4 col-lg-3'>
-        <div class='form-group ${hasErrors(bean: admProcMstInstance, field: 'parentAdmPermissible', 'has-error')}'>
-            <label><g:message code="admProcMst.parentAdmPermissible.label" default="Parent Adm Permissible"/></label>
-            <g:select name="parentAdmPermissible" class="form-control many-to-one" from="${org.reflection.adm.AdmPermissible.list()}" value="${admProcMstInstance?.parentAdmPermissible?.id}" optionKey="id" noSelection="['': 'Select One']"/>
-            <g:renderErrors bean='admProcMstInstance' field='parentAdmPermissible'/>
+        <div class='form-group ${hasErrors(bean: admProcMstInstance, field: 'parentAdmProcMst', 'has-error')}'>
+            <label><g:message code="admProcMst.parentAdmProcMst.label" default="Parent Adm Permissible"/></label>
+            <g:select name="parentAdmProcMst" class="form-control many-to-one" from="${org.reflection.adm.AdmProcMst.list()}" value="${admProcMstInstance?.parentAdmProcMst?.id}" optionKey="id" noSelection="['': 'Select One']"/>
+            <g:renderErrors bean='admProcMstInstance' field='parentAdmProcMst'/>
         </div>
     </div>
 
     <div class='col-xs-12 col-sm-6 col-md-4 col-lg-3'>
         <div class='form-group ${hasErrors(bean: admProcMstInstance, field: 'isActive', 'has-error')}'>
             <label><g:message code="admProcMst.isActive.label" default="Is Active"/></label>
-            <g:checkBox class="cb" name="isActive"  value="${admProcMstInstance?.isActive}" />
+            <g:checkBox class="cb" name="isActive" value="${admProcMstInstance?.isActive}"/>
             <g:renderErrors bean='admProcMstInstance' field='isActive'/>
         </div>
     </div>

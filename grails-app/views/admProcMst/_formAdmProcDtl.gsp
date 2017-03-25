@@ -25,7 +25,7 @@ admProcDtl.helpText.label=Help Text
     <legend class='text-purple' style='padding-top: 10px'>
         ${message(code: 'admProcDtl.pageTitle.label', default: 'Adm Proc Dtl Details')}
     </legend>
-    <g:each in="${admProcDtlList ?: new AdmProcDtl()}" status="i" var="admProcDtlInstance">
+    <g:each in="${admProcDtlList ?: new org.reflection.adm.AdmProcDtl()}" status="i" var="admProcDtlInstance">
         <div class='box box-info admProcDtlDetails'>
             <div class='box-body'>
 

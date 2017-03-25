@@ -1,4 +1,4 @@
-<%@ page import="hrms.AdmProcSts" %>
+<%@ page import="org.reflection.adm.AdmProcSts" %>
 <!DOCTYPE html>
 <html>
 <head>

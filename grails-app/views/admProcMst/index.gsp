@@ -36,7 +36,7 @@
                                     <th>${message(code: 'admProcMst.title.label', default: 'Title')}</th>
                                     <th>${message(code: 'admProcMst.itemType.label', default: 'Item Type')}</th>
                                     <th>${message(code: 'admProcMst.code.label', default: 'Code')}</th>
-                                    <th>${message(code: 'admProcMst.parentAdmPermissible.label', default: 'Parent Adm Permissible')}</th>
+                                    <th>${message(code: 'admProcMst.parentAdmProcMst.label', default: 'Parent Adm Permissible')}</th>
                                     <th>${message(code: 'admProcMst.isActive.label', default: 'Is Active')}</th>
                                     <th>${message(code: 'admProcMst.slNo.label', default: 'Sl No')}</th>
                                     <th>${message(code: 'default.button.action.label', default: 'Action')}</th>
@@ -49,7 +49,7 @@
                                             <td class="left">${fieldValue(bean: admProcMstInstance, field: "title")}</td>
                                             <td class="left">${fieldValue(bean: admProcMstInstance, field: "itemType")}</td>
                                             <td class="left">${fieldValue(bean: admProcMstInstance, field: "code")}</td>
-                                            <td class="left">${fieldValue(bean: admProcMstInstance, field: "parentAdmPermissible")}</td>
+                                            <td class="left">${fieldValue(bean: admProcMstInstance, field: "parentAdmProcMst")}</td>
                                             <td class="center"><g:formatBoolean boolean="${admProcMstInstance.isActive}" true="Yes" false="No"/></td>
                                             <td class="left">${fieldValue(bean: admProcMstInstance, field: "slNo")}</td>
                                             <td class="center">

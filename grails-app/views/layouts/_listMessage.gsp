@@ -74,7 +74,7 @@
                             <small><i class="fa fa-clock-o"></i> 2 days</small>
                         </h4>
 
-                        <p>Why not buy a new awesome theme?</p>
+                        <p>Why buy a new awesome theme?</p>
                     </a>
                 </li>
             </ul>

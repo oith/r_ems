@@ -70,13 +70,17 @@
     <aside class="main-sidebar">
         <section class="sidebar">
             <ul class="sidebar-menu">
-                <sec:access url="/_AdmProc">
-                    <li><a href="${request.contextPath}/_AdmProc"><i class="fa fa-circle-o"></i> Process</a></li>
-                </sec:access>
 
-                <sec:access url="/_AdmRpt">
+                %{--<sec:access url="/_AdmProc">--}%
+                    <li><a href="${request.contextPath}/emsApplicant"><i class="fa fa-circle-o"></i> Applicant</a></li>
+                    <li><a href="${request.contextPath}/_AdmProc"><i class="fa fa-circle-o"></i> Process</a></li>
+                %{--</sec:access>--}%
+
+
+
+                %{--<sec:access url="/_AdmRpt">--}%
                     <li><a href="${request.contextPath}/_AdmRpt"><i class="fa fa-circle-o"></i> Report</a></li>
-                </sec:access>
+                %{--</sec:access>--}%
             </ul>
         </section>  <!-- /.sidebar -->
     </aside>
