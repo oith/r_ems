@@ -32,13 +32,13 @@ class _AdmProcController {
 
     def index() {
         List<AdmProcMst> pgs = AdmProcMst.executeQuery("SELECT m FROM AdmProcMst m WHERE m.itemType='PG' AND m.isActive=true ORDER BY m.sortingOrder, m.title")
-        List<AdmProcMst> kkx = AdmProcMst.executeQuery("SELECT m FROM AdmProcMst m WHERE m.itemType='P' AND m.isActive=true ORDER BY m.parentAdmPermissible.sortingOrder, m.parentAdmPermissible.title, m.sortingOrder, m.title")
+        List<AdmProcMst> kkx = AdmProcMst.executeQuery("SELECT m FROM AdmProcMst m WHERE m.itemType='P' AND m.isActive=true ORDER BY m.parentAdmProcMst.sortingOrder, m.parentAdmProcMst.title, m.sortingOrder, m.title")
         List<AdmProcMst> kk = new ArrayList()
 
         for (AdmProcMst bbb : kkx) {
             AdmProcMst bbbm = new AdmProcMst()
             bbbm.setId(bbb.id)
-            bbbm.setTitle(bbb.getParentAdmPermissible().getTitle() + '-' + bbb.getTitle())
+            bbbm.setTitle(bbb.getParentAdmProcMst().getTitle() + '-' + bbb.getTitle())
             kk.add(bbbm)
         }
         [processGroupMap: pgs, processMap: kk]
@@ -56,14 +56,14 @@ class _AdmProcController {
         String selyaa = "SELECT m FROM AdmProcMst m WHERE m.itemType='P' AND m.isActive=true "
 
         if (processGroupId == null) {
-            List<AdmPermissible> mast = AdmProcMst.executeQuery(selyaa + "ORDER BY m.parentAdmPermissible.sortingOrder, m.parentAdmPermissible.title, m.sortingOrder, m.title")
-            for (AdmPermissible bbb : mast) {
-                sb.append("<option value='" + bbb.id + "'>" + bbb.getParentAdmPermissible().getTitle() + '-' + bbb + "</option>")
+            List<AdmProcMst> mast = AdmProcMst.executeQuery(selyaa + "ORDER BY m.parentAdmProcMst.sortingOrder, m.parentAdmProcMst.title, m.sortingOrder, m.title")
+            for (AdmProcMst bbb : mast) {
+                sb.append("<option value='" + bbb.id + "'>" + bbb.getParentAdmProcMst().getTitle() + '-' + bbb + "</option>")
             }
         } else {
-            List<AdmPermissible> mast = AdmProcMst.executeQuery(selyaa + "AND m.parentAdmPermissible.id=" + processGroupId + " ORDER BY m.parentAdmPermissible.sortingOrder, m.parentAdmPermissible.title, m.sortingOrder, m.title")
+            List<AdmProcMst> mast = AdmProcMst.executeQuery(selyaa + "AND m.parentAdmProcMst.id=" + processGroupId + " ORDER BY m.parentAdmProcMst.sortingOrder, m.parentAdmProcMst.title, m.sortingOrder, m.title")
             sb.append("<option value='/${null}'>" + '--select--' + "</option>")
-            for (AdmPermissible bbb : mast) {
+            for (AdmProcMst bbb : mast) {
                 sb.append("<option value='" + bbb.id + "'>" + bbb + "</option>")
             }
         }

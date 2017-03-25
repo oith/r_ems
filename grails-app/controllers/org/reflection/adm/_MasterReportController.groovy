@@ -12,18 +12,7 @@ class _MasterReportController {
     def dataSource
 
     def index() {
-        Map dynReportGroupMap = (Map) session?.getAttribute('dynReportGroupMap')
-        Map allDynSubReports = (Map) session?.getAttribute('dynSubReportMap')
-        Map dynSubReportMap = new HashMap<Long, String>()
 
-        allDynSubReports.each { key, val ->
-            def p = AdmPermissible.findById(key)
-            val.each { k, v ->
-                dynSubReportMap.put(k, p.title + "-" + v)
-            }
-        }
-
-        [dynReportGroupMap: dynReportGroupMap, dynSubReportMap: dynSubReportMap]
     }
 
     def getDbText() {

@@ -23,14 +23,14 @@ class _AdmRptController {
 
     def index() {
 
-        List<AdmPermissible> pgs = AdmRptMst.executeQuery("SELECT m FROM AdmRptMst m WHERE m.itemType='RG' AND m.isActive=true ORDER BY m.sortingOrder, m.title" as String)
-        List<AdmPermissible> kkx = AdmRptMst.executeQuery("SELECT m FROM AdmRptMst m WHERE m.itemType='R' AND m.isActive=true ORDER BY m.parentAdmPermissible.sortingOrder, m.parentAdmPermissible.title, m.sortingOrder, m.title" as String)
-        List<AdmPermissible> kk = new ArrayList()
+        List<AdmRptMst> pgs = AdmRptMst.executeQuery("SELECT m FROM AdmRptMst m WHERE m.itemType='RG' AND m.isActive=true ORDER BY m.sortingOrder, m.title" as String)
+        List<AdmRptMst> kkx = AdmRptMst.executeQuery("SELECT m FROM AdmRptMst m WHERE m.itemType='R' AND m.isActive=true ORDER BY m.parentAdmRptMst.sortingOrder, m.parentAdmRptMst.title, m.sortingOrder, m.title" as String)
+        List<AdmRptMst> kk = new ArrayList()
 
-        for (AdmPermissible bbb : kkx) {
-            AdmPermissible bbbm = new AdmRptMst()
+        for (AdmRptMst bbb : kkx) {
+            AdmRptMst bbbm = new AdmRptMst()
             bbbm.setId(bbb.id)
-            bbbm.setTitle(bbb.getParentAdmPermissible().getTitle() + '-' + bbb.getTitle())
+            bbbm.setTitle(bbb.getParentAdmRptMst().getTitle() + '-' + bbb.getTitle())
             kk.add(bbbm)
         }
         [reportGroupMap: pgs, reportMap: kk]
@@ -51,14 +51,14 @@ class _AdmRptController {
         String selyaa = "SELECT m FROM AdmRptMst m WHERE m.itemType='R' AND m.isActive=true "
 
         if (reportGroupId == null) {
-            List<AdmPermissible> mast = AdmRptMst.executeQuery(selyaa + "ORDER BY m.parentAdmPermissible.sortingOrder, m.parentAdmPermissible.title, m.sortingOrder, m.title")
-            for (AdmPermissible bbb : mast) {
-                sb.append("<option value='" + bbb.id + "'>" + bbb.getParentAdmPermissible().getTitle() + '-' + bbb + "</option>")
+            List<AdmRptMst> mast = AdmRptMst.executeQuery(selyaa + "ORDER BY m.parentAdmRptMst.sortingOrder, m.parentAdmRptMst.title, m.sortingOrder, m.title")
+            for (AdmRptMst bbb : mast) {
+                sb.append("<option value='" + bbb.id + "'>" + bbb.getParentAdmRptMst().getTitle() + '-' + bbb + "</option>")
             }
         } else {
-            List<AdmPermissible> mast = AdmRptMst.executeQuery(selyaa + "AND m.parentAdmPermissible.id=" + reportGroupId + " ORDER BY m.parentAdmPermissible.sortingOrder, m.parentAdmPermissible.title, m.sortingOrder, m.title")
+            List<AdmRptMst> mast = AdmRptMst.executeQuery(selyaa + "AND m.parentAdmRptMst.id=" + reportGroupId + " ORDER BY m.parentAdmRptMst.sortingOrder, m.parentAdmRptMst.title, m.sortingOrder, m.title")
             sb.append("<option value='/${null}'>" + '--select--' + "</option>")
-            for (AdmPermissible bbb : mast) {
+            for (AdmRptMst bbb : mast) {
                 sb.append("<option value='" + bbb.id + "'>" + bbb + "</option>")
             }
         }
